@@ -30,6 +30,7 @@ export interface CreateCustomerRequest {
   customerApiId: string
   allowedRoutes?: string[]
   enabled?: boolean
+  [key: string]: unknown
 }
 
 /**
@@ -38,6 +39,7 @@ export interface CreateCustomerRequest {
 export interface UpdateCustomerRequest {
   allowedRoutes?: string[]
   enabled?: boolean
+  [key: string]: unknown
 }
 
 /**

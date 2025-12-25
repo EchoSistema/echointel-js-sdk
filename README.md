@@ -5,17 +5,17 @@ Official SDK for integrating with the EchoIntel AI API. Works in both browser an
 ## Installation
 
 ```bash
-npm install @echointel/echointel-sdk
+npm install @echosistema/echointel-sdk
 # or
-yarn add @echointel/echointel-sdk
+yarn add @echosistema/echointel-sdk
 # or
-pnpm add @echointel/echointel-sdk
+pnpm add @echosistema/echointel-sdk
 ```
 
 ## Quick Start
 
 ```typescript
-import { EchoIntelClient } from '@echointel/echointel-sdk'
+import { EchoIntelClient } from '@echosistema/echointel-sdk'
 
 const client = new EchoIntelClient({
   customerApiId: 'your-customer-id',
@@ -126,7 +126,7 @@ const client = new EchoIntelClient({
 ## Error Handling
 
 ```typescript
-import { EchoIntelClient, EchoIntelError, ValidationError, AuthenticationError } from '@echointel/echointel-sdk'
+import { EchoIntelClient, EchoIntelError, ValidationError, AuthenticationError } from '@echosistema/echointel-sdk'
 
 try {
   const result = await client.forecastRevenue(data)
@@ -150,7 +150,7 @@ try {
 
 ```typescript
 // composables/useEchoIntel.ts
-import { EchoIntelClient } from '@echointel/echointel-sdk'
+import { EchoIntelClient } from '@echosistema/echointel-sdk'
 
 let client: EchoIntelClient | null = null
 
@@ -170,7 +170,7 @@ export function useEchoIntel() {
 ```typescript
 // hooks/useEchoIntel.ts
 import { useMemo } from 'react'
-import { EchoIntelClient } from '@echointel/echointel-sdk'
+import { EchoIntelClient } from '@echosistema/echointel-sdk'
 
 export function useEchoIntel() {
   return useMemo(() => new EchoIntelClient({
@@ -212,7 +212,7 @@ import type {
   SegmentationResponse,
   ChurnRiskResponse,
   // ... and more
-} from '@echointel/echointel-sdk'
+} from '@echosistema/echointel-sdk'
 ```
 
 ## License

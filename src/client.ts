@@ -481,10 +481,17 @@ export class EchoIntelClient {
   }
 
   /**
-   * Sanitize text
+   * Sanitize text (Portuguese)
    */
   async sanitizeText(data: Record<string, unknown>): Promise<SanitizeTextResponse> {
     return this.request<SanitizeTextResponse>('POST', Endpoints.SANITIZE_TEXT, data)
+  }
+
+  /**
+   * Sanitize text (English)
+   */
+  async sanitizeTextEn(data: Record<string, unknown>): Promise<SanitizeTextResponse> {
+    return this.request<SanitizeTextResponse>('POST', Endpoints.SANITIZE_TEXT_EN, data)
   }
 
   // =========================================================================

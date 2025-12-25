@@ -75,6 +75,7 @@ export const Endpoints = {
   NLP_ANALYSIS_EN: '/api/nlp_analisys_en',
   NLP_EXCESS_INVENTORY_REPORT: '/api/nlp_openai_excess_inventory_report',
   SANITIZE_TEXT: '/api/sanitize_text',
+  SANITIZE_TEXT_EN: '/api/sanitize_text_en',
 
   // Advanced Segmentation (Admin)
   PURCHASING_SEGMENTATION: '/api/purchasing_segmentation',

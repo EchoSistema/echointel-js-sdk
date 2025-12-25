@@ -23,6 +23,51 @@ export type {
   ResolvedConfig,
 } from './types/config'
 
+// Request types
+export type {
+  ForecastRequest,
+  ForecastByProductRequest,
+  InventoryRequest,
+  InventoryHistoryRequest,
+  SegmentationRequest,
+  RfmRequest,
+  LoyaltyRequest,
+  CltvRequest,
+  AbcRequest,
+  MicroSegmentationRequest,
+  ChurnRiskRequest,
+  ChurnLabelRequest,
+  NpsRequest,
+  PropensityRequest,
+  PropensityCampaignRequest,
+  PropensityUpgradeRequest,
+  RecommendUserRequest,
+  RecommendSimilarRequest,
+  CrossSellRequest,
+  UpsellRequest,
+  PricingRequest,
+  SentimentRequest,
+  SentimentRealtimeRequest,
+  AnomalyTransactionsRequest,
+  AnomalyAccountsRequest,
+  AnomalyGraphRequest,
+  CreditRiskRequest,
+  AttributionRequest,
+  UpliftRequest,
+  JourneyMarkovRequest,
+  JourneySequencesRequest,
+  NlpRequest,
+  SanitizeRequest,
+  PurchasingSegmentationRequest,
+  PatternsChartRequest,
+  HierarchyChartRequest,
+  HierarchyDataRequest,
+  TransitionMatrixRequest,
+  SegmentationReportRequest,
+  SegmentationReportI18nRequest,
+  GenerateReportRequest,
+} from './types/requests'
+
 // Response types
 export type {
   // Common

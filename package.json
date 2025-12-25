@@ -1,5 +1,5 @@
 {
-  "name": "@echosistema/echointel-sdk",
+  "name": "echointel-sdk",
   "version": "1.0.0",
   "description": "EchoIntel AI SDK for JavaScript/TypeScript",
   "author": "EchoSistema S.A.",

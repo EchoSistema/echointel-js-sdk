@@ -1,6 +1,6 @@
 {
   "name": "echointel-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "EchoIntel AI SDK for JavaScript/TypeScript",
   "author": "EchoSistema S.A.",
   "license": "SEE LICENSE IN LICENSE",

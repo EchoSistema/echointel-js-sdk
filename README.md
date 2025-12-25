@@ -277,7 +277,6 @@ export const echointel = new EchoIntelClient({
 # Node.js
 ECHOINTEL_CUSTOMER_API_ID=your-customer-id
 ECHOINTEL_SECRET=your-secret
-ECHOINTEL_ADMIN_SECRET=your-admin-secret
 
 # Vite (Vue/Svelte)
 VITE_ECHOINTEL_CUSTOMER_API_ID=your-customer-id

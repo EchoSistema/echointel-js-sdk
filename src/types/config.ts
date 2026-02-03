@@ -2,7 +2,7 @@
  * EchoIntel SDK Configuration
  */
 export interface EchoIntelConfig {
-  /** API base URL (default: 'https://ai.echosistema.live') */
+  /** API base URL (default: 'https://ai.echosistema.dev') */
   apiUrl?: string
   /** Customer API ID (required) */
   customerApiId: string

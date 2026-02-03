@@ -66,7 +66,7 @@ const client = new EchoIntelClient({
   secret: 'your-secret',
 
   // Optional
-  apiUrl: 'https://ai.echosistema.live', // default
+  apiUrl: 'https://ai.echosistema.dev', // default
   adminSecret: 'your-admin-secret',       // for admin endpoints
   timeout: 30000,                          // request timeout in ms
   retry: {
@@ -173,8 +173,7 @@ const client = new EchoIntelClient({
 |--------|-------------|
 | `nlpAnalysis(data)` | NLP analysis (Portuguese) |
 | `nlpAnalysisEn(data)` | NLP analysis (English) |
-| `sanitizeText(data)` | Text sanitization (Portuguese) |
-| `sanitizeTextEn(data)` | Text sanitization (English) |
+| `sanitizeText(data)` | Text sanitization |
 
 ### Admin Operations
 | Method | Description |

@@ -487,13 +487,6 @@ export class EchoIntelClient {
     return this.request<SanitizeTextResponse>('POST', Endpoints.SANITIZE_TEXT, data)
   }
 
-  /**
-   * Sanitize text (English)
-   */
-  async sanitizeTextEn(data: Record<string, unknown>): Promise<SanitizeTextResponse> {
-    return this.request<SanitizeTextResponse>('POST', Endpoints.SANITIZE_TEXT_EN, data)
-  }
-
   // =========================================================================
   // ADVANCED SEGMENTATION (ADMIN)
   // =========================================================================
@@ -566,6 +559,67 @@ export class EchoIntelClient {
       data,
       true
     )
+  }
+
+  // =========================================================================
+  // ASYNC ML JOBS
+  // =========================================================================
+
+  /**
+   * List async ML jobs
+   */
+  async listJobs(params?: { customerApiId?: string; status?: string; limit?: number }): Promise<Record<string, unknown>> {
+    const query = new URLSearchParams()
+    if (params?.customerApiId) query.set('customer_api_id', params.customerApiId)
+    if (params?.status) query.set('status', params.status)
+    if (params?.limit) query.set('limit', String(params.limit))
+    const qs = query.toString()
+    return this.request<Record<string, unknown>>('GET', `${Endpoints.JOBS}${qs ? `?${qs}` : ''}`)
+  }
+
+  /**
+   * Get async job status
+   */
+  async getJobStatus(jobId: string): Promise<Record<string, unknown>> {
+    return this.request<Record<string, unknown>>('GET', `${Endpoints.JOBS}/${jobId}/status`)
+  }
+
+  /**
+   * Get async job result
+   */
+  async getJobResult(jobId: string): Promise<Record<string, unknown>> {
+    return this.request<Record<string, unknown>>('GET', `${Endpoints.JOBS}/${jobId}/result`)
+  }
+
+  // =========================================================================
+  // DEAD LETTER QUEUE
+  // =========================================================================
+
+  /**
+   * List Dead Letter Queue messages
+   */
+  async listDlqMessages(params?: { queueName?: string; limit?: number }): Promise<Record<string, unknown>> {
+    const query = new URLSearchParams()
+    if (params?.queueName) query.set('queue_name', params.queueName)
+    if (params?.limit) query.set('limit', String(params.limit))
+    const qs = query.toString()
+    return this.requestAdmin<Record<string, unknown>>('GET', `${Endpoints.DLQ_MESSAGES}${qs ? `?${qs}` : ''}`)
+  }
+
+  /**
+   * Retry a Dead Letter Queue message
+   */
+  async retryDlqMessage(jobId: string, queueName?: string): Promise<Record<string, unknown>> {
+    const query = queueName ? `?queue_name=${queueName}` : ''
+    return this.requestAdmin<Record<string, unknown>>('POST', `${Endpoints.DLQ_RETRY}/${jobId}${query}`)
+  }
+
+  /**
+   * Delete a Dead Letter Queue message
+   */
+  async deleteDlqMessage(jobId: string, queueName?: string): Promise<Record<string, unknown>> {
+    const query = queueName ? `?queue_name=${queueName}` : ''
+    return this.requestAdmin<Record<string, unknown>>('DELETE', `${Endpoints.DLQ_MESSAGES}/${jobId}${query}`)
   }
 
   // =========================================================================
